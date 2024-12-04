@@ -27,3 +27,12 @@ systemctl daemon-reload
 systemctl restart docker
 newgrp docker
 usermod -aG docker jenkins
+
+# Instalation sonar scanner
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+unzip sonar-scanner-cli-4.6.2.2472-linux.zip -d /opt/
+mv /opt/sonar-scanner-cli-4.6.2.2472-linux /opt/sonar-scanner/
+chown -R jenkins:jenkins /opt/sonar-scanner
+echo 'export PATH=$PATH:/opt/sonar-scanner-4.6.2.2472-linux/bin' | sudo tee -a /etc/profile
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+sudo apt install nodejs -y
