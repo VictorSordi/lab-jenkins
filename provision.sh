@@ -25,3 +25,5 @@ usermod -aG docker vagrant
 newgrp docker
 systemctl daemon-reload
 systemctl restart docker
+newgrp docker
+usermod -aG docker jenkins
