@@ -37,3 +37,9 @@ docker login localhost:8123
 docker tag devops/app:latest localhost:8123/devops/app
 
 docker push localhost:8123/devops/app
+
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+usermod -s /bin/bash jenkins
