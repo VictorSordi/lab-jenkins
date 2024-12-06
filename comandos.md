@@ -43,3 +43,7 @@ curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/b
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 usermod -s /bin/bash jenkins
+
+su -s jenkins
+
+criar pasta ~/.kube/config e dentro dela colar o cat /etc/rancher/k3s/k3s.yaml do cluster k8s
